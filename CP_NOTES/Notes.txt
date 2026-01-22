@@ -1,0 +1,1637 @@
+                                                                                               How to up solve 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Step-by-Step Approach to Up solving C (Post-Contest)
+
+Step 1: Recall your thought process
+What approaches did you try?
+
+Where did you get stuck — logic? edge cases? time complexity?
+
+Was it an idea problem or implementation-heavy?
+
+Write down what you tried in 1–2 lines — helps clear your head.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Step 2: Rethink the problem from scratch
+Spend 15–20 mins:
+
+Reread the statement slowly and break it down.
+
+Try small input cases manually.
+
+Think: Is it brute-forceable for small inputs?
+
+Can you simulate, use a greedy, binary search, prefix/suffix, frequency map, two-pointer?
+
+If it’s C, it’s likely medium logic + implementation.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Step 3: Read only a small hint (not full solution)
+Use Code forces editorial (or video if available). Stop after:
+
+Tags like: greedy, prefix sum, DSU, etc.
+
+First 2–3 sentences of the explanation.
+
+Then go back and try again with that hint in mind.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Step 4: If stuck again, read full editorial
+Now:
+
+Understand why your approach failed.
+
+Focus on the core trick or idea (1–2 lines).
+
+Then try to code it yourself without copy-pasting.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Step 5: Write down your learning
+Maintain a small log like:
+
+CF Round 950 Div 3 - Problem C
+Tried brute force, TLE.
+Key idea: sort + two-pointer + binary search
+Learned: When to use binary search on answer
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+entences of the explanation.
+
+Then go back and try again with that hint in mind.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Step 4: If stuck again, read full editorial
+Now:
+
+Understand why your approach failed.
+
+Focus on the core trick or idea (1–2 lines).
+
+Then try to code it yourself without copy-pasting.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Step 5: Write down your learning
+Maintain a small log like:
+
+CF Round 950 Div 3 - Problem C
+Tried brute force, TLE.
+Key idea: sort + two-pointer + binary search
+Learned: When to use binary search on answer
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Stop Revising. Start Internalizing.
+
+If you're preparing for DSA interviews or grinding competitive programming, here's something no one's saying loud enough:
+
+You don't need to revise problems. You need to absorb them.
+
+Solving a problem isn't about memorizing a template or dry-running steps like:
+
+> “We initialize two pointers i and j, then move j while…"
+
+That’s mechanical. That’s brittle. That’s not how real understanding works.
+
+Instead:
+
+> “We maintain a dynamic window. One boundary explores, the other adjusts to maintain validity.”
+
+See the difference? That’s thinking in terms of ideas, not code.
+
+So how do you actually get better?
+
+Understand why a certain technique worked in that situation. What was the core tension in the problem? What invariant did the solution maintain? Why was sliding window even relevant?
+
+Once you build this feel, you’ll begin to transfer intuition across problems — like how you naturally use your hands and legs. No one taught you how to balance — you just felt it.
+
+Speed? Patterns?
+
+You won’t get faster by trying to be fast. You get faster by recognizing patterns — and that only happens by exposing yourself to more new problems.
+
+Solve problems below your level.
+Give regular contests. 
+Aim for exposure, not ego.
+
+DSA prep isn’t about just solving 1000 problems. It’s about solving 1000 and then understanding every one of them from first principles.
+
+So next time you finish a problem, don’t ask “how do I solve it again?”
+
+
+Ask: 
+“Why did this work?” 
+“What was the heart of the idea?” 
+“Where else can I use this?”
+
+That's what real growth is.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CPP points
+
+Make input output for efficient 
+ios::sync_with_stdio(0);
+cin.tie(0); 
+Fast I/O using ios::sync_with_stdio(false)   , breaks sync between printf of c and cout c++
+cin.tie(NULL) for break cin and cout sync
+2*10^9 -> int range 
+9*10^18 -> long long range
+
+// Operation on string ques count check kr sakte hi operation ke baad kya changes ayenge aur kya conditons same rahegi. 
+// prefix sum for any index by creating a prefix sum array can used to solve if u r working on index and sum
+
+// fixed and set precision for doubles
+
+// if you are given an array a and an array b and you are asked to convert the array b to array after performing any operation on array b then always think in reverse direction also can u convert the array a to b in same reverse operations
+
+// Modulo Operation - Basic role is to control overflow on big values in a range  , can also be used when you want to use array as circular array
+
+// if in ques it is written give output ans modulo m  always do arithmetic operation according to formulae
+
+// If You want to calculate sum till  ith or in a range suppose l to r always think about prefix sum and suffix sum and total sum - prefix/suffix sum.
+
+// Technique when u asked expect ith gcd or lcm u can calculate before ith gcd that is upto   i-1 and after i that is i+1 and merge them.
+
+// If u r asked anything in fix sized window then u have to just think about the sliding window very useful.
+
+// If a number is there and u need to find largest divisor other than num --> it will be --> num/prime[x], prime[x] => lowest prime factor of num.
+
+// To check subarray is sorted or not firstly create a array such that code snippet -->
+ vector<int> prefix(n, 0);
+ for (int i = 1; i < n; i++) 
+ prefix[i] = prefix[i - 1] + (a[i - 1] > a[i]);
+ Ex- a[] = {1, 2, 2, 4, 3, 5}
+ prefix[] becomes: {0, 0, 0, 0, 1, 1}
+Now if u want to check between l and r , if p[r] - p[l] == 0 sorted ,  if not unsorted.
+
+// The key insight is understanding that repeatedly subtracting K from N , until N  becomes smaller than K , is functionally equivalent to finding the remainder of N when divided by K, which is what the modulo operation (N % K) does.
+
+// The expression return (num & (num + 1)) == 0 is a clever way to check if all the bits in a number are set .
+
+// __builtin_popcount -> to count set bits in number
+
+// parity check in cancel type of question -> obeservation 
+
+// minimum or maximum between two arrays any operation -> sort (greedy algo)
+
+// first += string(freq[ch]/2, ch); => This creates and add a string basis of the freq/2 ,Its a syntax.
+
+// maximum and minimum  imp , sort , pair if corresponding elements is mentioned , else min difference or max difference.
+
+//  There is inbuilt function in c++ next_permutation on vector or string.   See leetcode questions 31 and 46.
+
+// Freq array -> with index 0 - 25 -> s[i] - 'a' -> it gives correct index , and s[i] + 'a' -> it gives character 
+    
+s[i] - '0' -> it convert character to number.          ==> Example: '3' - '0' → 3
+
+number + 'a' -> it converts number to character.       ==> Example: 2 + 'a' → 'c' (since 'a' is ASCII 97, 97 + 2 = 99, which is 'c').
+
+// Circular array - In circular array problem if I want to find distance of element from any index create a array with copy of array and middle one treat as main and two array will be there one of left and one on right.
+
+// If there are 2 numbers a,b and one number n , we want those numbers which are divisible by both a and b till n ==> n/lcm(a,b).
+
+// In the range 1 To N ==> if we want a count of all numbers that are divisible by X , can be counted as --> N/X  
+
+// Jab hume ek range mein ese integer count krne hai jo a aur b ke bich mein ho , aur c aur d dono se divide hote ho to hum vo numbers count kr skte hi jo c se hote hi => b/c - a-1/b krkr aur jo d se hote hi vo => b/d - a-1/d krkr , and jo dono se hote hi is dono ko add krdo par ismein kuch ese bhi hoge jo dono se hote hoge => unko minus krdo sum mein se => unko nikal skte hi => lcm(c,d) krkr
+
+// If a Number P is given => then all divisors of P-1 will give the same remainder when divided by P.
+
+// a%b => range from 0 to b-1 .
+
+// When frequency of characters is given and you have to construct Max length palindrome subsequence ,   f/2 + odd freq + f/2;
+
+// Observation => If u can perform an operation on index+1 , then its always better to start from back side .
+
+
+// Time Complexity Imp points
+
+10^8 ==> 1 second of time 
+
+if it is given that time limit per test  => 2 sec  = 2*10^8 sec , and testcases per test file => 10*4 , we normally algorithm dependent for every test case , operation/testcase  = limit per test / number of test cases ===>  2*10^8 / 10^4 ==> 2*10^4 , And each test have its own 'n' . suppose n = 10^5 , now it will not work for a test case . but if it is written that sum of allover test case dont exceed 10^5 we will check for test file and 10^5 solution will work , but  its not written it will not work .
+
+But suppose solution allowed on test file ==> 2*10^8 , n = 10^5 , now a solution with nlogn is also valid , because nlogn <= 2*10^8 very imp point.
+
+N! = N= 10                   ===> all permutations of an array
+N^3 = N= 400                 ===> matrix multiply 
+N^2 = N= 5000                ===> bubble , insertion sort 
+NrootN = N= 10^5             ===> usually factoring 
+NlogN = N= 10^6              ===> Merge sort , Binary search n times
+N = N= 10^7                  ===> Linear search, reverse , string compare 
+rootN = N= 10^12             ===> factors of a number
+log n / o(1) = N= 10^18      ===> binary search / formula related 
+
+
+// lowerbound in STL return the index of the element equal or greater than passed value , lower_bound(starting index, end index , value) 
+   same with upper bound just opposite index.
+
+// (h + d - 1) / d;  ==> ceil value with integer format 
+ 
+==> Come up with a entire solution , then think about the code.
+
+==> Standard Techniques will help in implementation skills.
+
+==> Not to solve more than 40 problems in 1 rating.
+
+==> Don't feel comfort in learning , if able to solve 60% in a rating move up.
+
+==> At each rating learn new algo and techniques learn them and practice there standard problems.
+
+==> Two types of learning ==> already knows the topic of range => Do questions of that rating.
+
+==>Learn Topic of next rating and Practice them using editorials.
+
+==> Learn a algorithm -->  Save code snippets --> standard ques --> Rating range Try to recognise the pattern (try to recall the algo/ topic)
+
+// We can not store more than 2^63 in c++ datatypes
+
+// If there are n number of things then in binary there are n+1 possible ways to select things
+
+// In parity questions , odd numbers contributes.
+
+// a is not divisor of b ==> a%b!=0	
+
+// In contructive Algorithms , try to get a pattern , and remove wrong ans algorithm .
+
+// In constructive algorithm focus on Constraints how you can modify Problem , may be there will be observation and a pattern not easy to think
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Prefix means => sum of all elements from start to till that index.
+
+// prefix sum a[i] is sum of all elements from 0 to i , inclusive.
+
+// prefix sum in 2 d array is sum of all the elements from 0 row to ith row , and 0 column to ith column.
+
+// Precomputation --> When you can store some result on the basis of that you can give Ans , hashing can be used there , suppose a array is given , for each query q output the count of x present in that array  , for each t test case 
+
+N --> 10^5 
+q --> 10^5
+a[i] --> 10^7  --> we can use hashing here because of this point also , not possible if 10^9 is there 
+
+Now you will do it brute force it will give o(N^2) --> TLE 
+
+so you can pre compute each number count in array outside the query loop , and output as required 
+
+o(n) --> accepted
+
+// Prefix sum ==> Always try to use 1 based index in Prefix sum Questions
+
+Example ==> Given a array a of N integers , Given Q queries and in  each query given L , R print sum of array elements from index L to R (L, R included)
+
+//
+Constraints ==> 1<=N<= 10^5 
+1<=a[i]<= 10^9
+1<=Q<=10^5
+1<=L, R<=N
+//
+
+Brute force TLE 
+
+Prefix sum => store sum of elements till that index , now for each q just calculate sum ==> p[r] - p[l-1] 
+
+// Prefix sum on 2-d arrays 
+
+// No Matter question is saying index from 1 to n or 0 to n-1,  just take input in 0 based index form ,  then cal prefix sum having n+1 rows and n+1 columns , and cal it using formula , and then for each query q , print using formula 
+
+Given 2d array a of N*N integers. Given Q queries and in each query given a, b, c and d print sum of square represented by (a,b) as top left point and (c,d) as bottom right point
+
+Constraints
+1 <= N <= 10^3
+1 <= a[i][j] <= 10^9
+1 <= Q <= 10^5
+1 <= a,b,c,d <= N
+
+very logical Refer to EP-13 for diagram , but its simple just add {{   ---- p[i][j] = a[i][j] + p[i-1][j] + p[j][i-1] - p[i-1][j-1] ---- }}
+
+For handling index out of bound create array with 0 based index and 1 row and 1 col fill up with 0.
+
+Now for sum (a,b) to (c,d)  ==> {{  --- p(c,d) - p(a-1, d) - p(c, b-1) + p(a-1, b-1) --- }}
+
+sometimes if u see a array declared globally => generally we can not declare arrays with 10^7 range inside a function so we declare it globally.
+
+
+**This is an Optimised Approach to deal with Prefix sum Questions , Basically If prefix sum not work , Difference array work**
+
+// Difference array --> Need -- When u want to get sum from any index l,r of an array , it is simple can be calculated using  prefix sum ,    but suppose you have q queries and you need to add x in range l,r ,  how can u do that without traversing from l to r , we used technique difference array  ,  create a array pre with all values 0, then add x to l index and subtract x from r+1 index , and calculate prefix sum of pre . and add the pre[i] to a[i] you will get the ans.
+
+reason we can effect of x till r so we subtract x from r+1.
+
+But constraints must be L,R must be <=  1e6 ? 
+
+Answer for diff array must be less than 1e6 ==> TLE 
+
+** Difference array not work Coordinate Compression work ** 
+
+Coordinate compression is used to deal with L,R > 1e6  code part saved 
+
+
+// Ad Hoc Patterns
+
+To check 10^3 is divisible y 10 , we can check if a number has last three digits 0 then yes else no.
+
+same check 2^3 , last three digits must be 0
+
+pow(2,x) == 1<<x
+
+observation on max value possible
+
+if we add a 2^5 to number div by it, then no need to  check for 2^6 ,...
+
+In case for 2^x , (a[i] % 2 == 0) is equal to (a[i] & 2^x -1)
+
+// First observe relation in row and column
+// Parity base or any other pattern 
+
+// In operation questions check Do you really need operation , observe invariant like avg of numbers in array constant when divide into subsequence
+
+// Number of subarrays sum equal to x 
+
+use map and prefix sum , iterate on prefix sum and check for sum-x present , because if sum-x present , sum - sum + x = x  , x must be there store count of sum-x present in map also if sum ==x , increase answer
+
+// If we want min dis , price from any point in an array , pick the median point , for both odd and even (proved), that is n/2 element .
+
+// CSES Digit Query ====> Very good question . 
+
+//  If in a question , some choice is asked and told in which way to choose so that it maximise or minimise , think about greedy , mostly chance basic greedy .
+
+// Always think on edge case --> use long long to safe , use checks if ans can not be negative .
+
+// Ad Hoc Problems weak in observation and constructing an algorithm
+
+// Bit Manipulation  - Problems may or may not directly involve bit manipulation
+
+// some problems use bitwise operations directly while some use indirectly 
+
+// If the problem involves power of 2 it might be related to binary , while some other powers related to other base .
+
+// Bit manipulation 
+// Deal with base 2, thin about binary forms, think in bits
+
+// when we do XOR operation , if number of bits are odd we get 1, else 0
+
+OR , AND , XOR order not matter
+a^a = 0
+0^a = a
+a&b <= min(a,b)
+a|b >= max(a,b)
+a|b + a&b = a+b
+a&1 = 1 - odd else even
+a&(a-1) = 0 , if a is power of 2 (a!=0)
+Numbers whih are power of 2 , has only 1 set bit , that is MSB
+0 cant change bit in XOR operation
+when we XOR with 1 -- bits toggle 
+if any bit from left side is greater than  same place bit in another number then that number is greater
+
+More number of & -- result decrease or same 
+More number of | -- result in increase or same 
+
+odd -- MSB -- 1
+Even -- MSB -- 0
+
+if any number is power of 2 ,  say 16 -- in bits 10000 -- 2^4
+
+to check if a number is power of 2 a&a-1 = 0
+A<<B -- A*2^B
+A>>B -- A/2^B
+
+// set the kth bit -- A | (1<<k)
+// check if kth bit is set or not -- A & (1<<k)
+
+// Toggle kth bit -- A ^ (1<<k)
+
+// Unset kth bit  --  if (A&(1<<k)){
+
+                          A^(1<<k)
+                       }
+https://www.codechef.com/problems/MAXAND18  ==> This question concepts ++
+
+How to check wrong answer Test case where it fails especially for edge case
+
+int t; cin>>t;
+
+for(int tt = 1; tt<=t; tt++){
+     if(tt == 187 && t == x check krlo t kii value normally alag rkhta cf){
+                 cout<<n<<" "<<m<<endl;
+                 return;
+     }
+}
+
+https://www.codechef.com/problems/AVGAPP  -- Aswm question in terms of observation after some operations  on k must be there , bcos ans depends on k ops but k is too large it means after some ops koi pattern ban jayega ops karne kii need nahi padegi
+
+https://codeforces.com/problemset/problem/1909/B -- good concept , when we divide a number with 2^j we will get last j bits as remainder . 
+
+swap a,b
+a = a^b
+b = a^b
+a = a^b
+
+2^k-1 has last k set bits 
+popcount
+clz
+ctz
+
+A bitmasking is nothing but a sequence of bits where every bit represents something.
+Think of it as a Boolean array which takes less memory
+As Boolean value store T/F -- it takes 1 byte memory
+
+generally we used bit masking for subsets , 
+
+To create subsets we can either use Boolean array of size n , then it takes n*4 bytes of memory , but if we use Bit Masking ,It will take only up to 32 bits, integer range
+
+suppose we have n numbers , then The min value we can create using bits is 0, and max value can be created is 2^n -1 , why 2^n -1 , because we know  it has n last n bits as 1 that is max value.
+
+and thats the number of subsets we can created using n numbers
+
+Pseudo code - (mask = 0, mask<(1<<n); mask++)                 -- T.c = 2^n*n ,  S.C = 32 bits --> o(1)
+                   (i = 0; i<n; i++)
+                       if(mask & (1<<i))
+                          cout<<a[i];
+
+
+**** It is very useful in Dp+bitmaksing , when n == 20, 25 Then it is a hint that Dp+bitmasking can be used.
+
+For interviews Purpose 
+
+Suppose array size is , n = 100
+
+then can not create a single variable with that many bits
+
+but we can create 4 - 32 bit integers or 2 64 bit integers, Looks complicated
+
+Bitsets can be used here , In c++ stl , we have data structure bitsets
+syntax = bitsets<320>name;
+
+bit[i] can be used to access and set the ith bit , jus like we use arr[i] to acess or set the ith element in array.
+can initialise the bitsets with some binary string or integer also
+
+Useful functions
+bit.count -- number of set bits
+bit.flip  -- flip all the bits
+any , none , all 
+to_string returns binary string
+
+Fortune telling--
+concept Question -- In a question if some operations are mention on the array or string and you can not sure about the ops order or choices many possible combinations can be there , and complexity dont allow you  to do that , then think about some results can be threre on the basis of parrity or even odd or anything.
+
+// When we add or XOR a odd number with any other number parity of result change.
+// when we add or XOR a even number with any other number parity  dont change
+// Also if somevaribales are given to start with ops , then think may be for intution they can be used , like ops start x for alice and x+3 for bob  then clearly x and x+3  parity must be different -- intution to think about parity
+
+Gardner and the array -- 
+two subsequnce such that OR of all the elements in both subsequnce are equal 
+
+// SET Bits position matters in this Q, it will affect the result of numbers, Think when they can be equal or when not , and an easy way to find two subsequence , just think if u take all the numbers in 1 sub , and u want to take another sub then when it possible that  u will have same result  only when u find atlest 1 number whose present doesnot matter , store the set bits at each position of all the numbers , now just iterate on each number and check count is 2 for any number for all the positions which that number have set bits , if found Yes , else No.
+
+// Stack 
+// Queue
+// dequeue
+
+Monotonic stack  -- Very Imp
+
+NGL 
+NGL
+NSL
+NSR
+
+all these are important 
+
+Codes Easy just mantain 1 stack and 1 ans array
+
+Codes Ques - Prev smaller element & Next greater element 
+
+
+Priority Queue -- Extended Queue -- For custom sorting using comparator class , its opposite , suppose a pair of <int,int> is there and you want to sort if 1 is same then sort 2 Opposite to 1 , if Min PQ is there , so we will use custom class , but if true -- swap , false -- no swap where as in vector it is opposite flase -- swap, true -- no swap
+
+
+
+// nice
+A Latin square of order N is an N×N grid filled with N different symbols (often 0, 1, 2, …, N-1) such that:
+
+Each symbol appears exactly once in every row
+
+Each symbol appears exactly once in every column
+
+Example: N = 4
+0 1 2 3
+1 2 3 0
+2 3 0 1
+3 0 1 2
+
+
+Each row has 0 1 2 3 exactly once
+
+Each column has 0 1 2 3 exactly once
+
+Why it matters in CP
+
+Many CP problems need:
+
+No repeats in a row
+
+No repeats in a column
+
+Balanced or cyclic patterns
+
+Latin squares automatically satisfy that, so they’re like a “template” solution for:
+
+Grid coloring problems
+
+Scheduling problems
+
+Tournament pairings
+
+Problems with MEX in rows/columns (like your problem)
+
+Modular arithmetic patterns
+
+The Easiest Construction
+
+The simplest way to make a Latin square:
+𝑁
+A[i][j]=(i+j)modN
+
+    
+// If n is even --- we can get odd number by doing n/2 or n/2 then n--;
+//Whenever a problem involves only doubling and adding one (or the reverse: halving and subtracting one),
+it’s really just traversing the binary representation.
+The number of manual operations equals the number of 1’s in that binary.
+
+
+/////
+Bitwise AND Concept – Key Points
+MSB (Most Significant Bit):
+If n is a power of 2 → MSB = 1, all other bits = 0.
+n - 1 → MSB = 0, all lower bits = 1.
+log2(n):
+Gives the exponent of the highest power of 2 ≤ n (just smaller or equal to n).
+Formula for largest k (AND = 0):
+Power of 2 → k = n - 1
+Otherwise → k = 2^floor(log2(n)) - 1
+
+
+////
+ Number of differnet bits between 2 numbers -- builtin__popcount(x^y) 
+
+// only 3 possiblities are there then think to try each and on the basis of formula becos range was too high and also use of d to form equation as its a const .
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Equal Division / Grouping
+
+"Am I trying to split something into the largest possible equal parts?"
+
+If yes → Answer = gcd of sizes.
+
+Example: Cut 24 and 36 chocolates into equal piles → gcd(24,36)=12.
+
+Common Factor Condition
+
+"Do I need a number that divides all given numbers?"
+
+If yes → Answer = gcd of numbers.
+
+Example: Simplify ratio (12,18) → gcd=6 → (2,3).
+
+Differences Trick
+
+"Am I allowed to add/subtract a value until all numbers become the same?"
+
+Then step size must divide all differences → Answer = gcd of differences.
+
+Example: Make [14, 23, 32] equal → gcd(23-14, 32-14) = gcd(9,18)=9.
+
+Periodicity / Cycles
+
+"Does the problem involve repeating patterns (strings, rotations, arrays, clocks)?"
+
+Then cycle overlap often comes from gcd (or lcm).
+
+Example: String of length 12, rotation of 8 → min repeating step = gcd(12,8)=4.
+
+Ratios & Fractions
+
+"Am I asked to reduce or compare ratios?"
+
+Always reduce using gcd.
+
+Example: 50 apples & 20 oranges → gcd(50,20)=10 → ratio = 5:2.
+
+When multiple constraints must hold
+
+"Do I need the largest number that satisfies all divisibility constraints at once?"
+
+Answer = gcd of those constraints.
+
+Red Flags → Think GCD if you see:
+
+“maximum size of equal…”
+
+“can divide into groups of…”
+
+“find common divisor…”
+
+“make numbers equal by adding/subtracting…”
+
+“repeated pattern / cycle length…”
+
+“reduce ratio / fraction…”
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Min Stack in 0(1) , if you want to get the min value from stack type structure LIFO, we use this --
+
+struct MinStack {
+    stack<pair<int,int>> st; // {value, min_so_far}
+
+    void push(int x) {
+        int new_min = st.empty() ? x : min(x, st.top().second);
+        st.push({x, new_min});
+    }
+
+    void pop() {
+        st.pop();
+    }
+
+    int top() {
+        return st.top().first;
+    }
+
+    int getMin() {
+        return st.top().second;
+    }
+
+    bool empty() {
+        return st.empty();
+    }
+};
+Example usage:
+
+cpp
+Copy
+Edit
+MinStack ms;
+ms.push(5);   // stack: (5,5)
+ms.push(3);   // stack: (3,3), (5,5)
+ms.push(7);   // stack: (7,3), (3,3), (5,5)
+
+cout << ms.getMin(); // 3
+ms.pop();            // removes 7
+cout << ms.getMin(); // 3
+ms.pop();            // removes 3
+cout << ms.getMin(); // 5
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Important technique may be asked in interview // Leetcode 239 / CSES Sliding Window Minimum
+When to Use in CP?
+
+When you need the minimum in a sliding window.
+Example: "Given array A and window size k, print the min for every window of size k."
+
+Problems involving range minimum queries on a moving window.
+
+Typically used in:
+
+Sliding Window Minimum (LeetCode 239 / CSES Sliding Window Minimum)
+
+Queries with fixed length
+
+
+
+struct MinQueue {
+    deque<int> dq; // stores values in non-decreasing order
+
+    void push(int x) {
+        while (!dq.empty() && dq.back() > x)
+            dq.pop_back();
+        dq.push_back(x);
+    }
+
+    void pop(int x) {
+        if (!dq.empty() && dq.front() == x)
+            dq.pop_front();
+    }
+
+    int getMin() {
+        return dq.front();
+    }
+
+    bool empty() {
+        return dq.empty();
+    }
+};
+ Example: Sliding Window Minimum
+cpp
+Copy
+Edit
+int main() {
+    vector<int> arr = {1, 3, -1, -3, 5, 3, 6, 7};
+    int k = 3; // window size
+    MinQueue mq;
+
+    // process first k elements
+    for (int i = 0; i < k; i++) mq.push(arr[i]);
+    cout << mq.getMin() << " ";
+
+    // process rest
+    for (int i = k; i < arr.size(); i++) {
+        mq.pop(arr[i - k]);   // remove old element
+        mq.push(arr[i]);      // add new element
+        cout << mq.getMin() << " ";
+    }
+}
+Output:
+
+diff
+Copy
+Edit
+-1 -3 -3 -3 3 3
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+Method 2  with index use
+ 
+struct MinQueue {
+    deque<pair<int,int>> dq; // stores {value, index}
+    int k;                   // window size
+
+    // Constructor: initializes window size
+    MinQueue(int window) : k(window) {}
+
+    // Insert element (value = x, index = i)
+    void push(int x, int i) {
+        // Remove all bigger elements from the back (they can never be minimum)
+        while (!dq.empty() && dq.back().first > x)
+            dq.pop_back();
+        dq.push_back({x, i}); // Insert new element
+    }
+
+    // Remove elements that are out of window (index <= i-k)
+    void pop(int i) {
+        if (!dq.empty() && dq.front().second <= i - k)
+            dq.pop_front();
+    }
+
+    // Minimum is always at front
+    int getMin() {
+        return dq.front().first;
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Check if all piles are 1 → then classical Nim → winner = parity of N (odd → first wins, even → first loses).
+
+If any pile ≥ 2 → moves are random and symmetric → first player cannot control → probability of winning = 1/2.
+
+Nim Game Rule --> For 2 piles → losing if both piles are equal.
+
+For n piles → just apply XOR rule.
+
+adding zeros at end means , x*10^k, where k increase each time 
+
+If moves repeat, either the path loops (check one cycle) or drifts away (check only until it goes past the target).
+
+If a problem asks for ordered pairs between elements of two groups (say all mins and all maxs), the count = |A| * |B| * 2 (since both (min, max) and (max, min) are valid).
+
+Total ordered pairs = choose first element in n ways × choose second element in (n-1) ways = n*n-1
+ 
+ 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main() {
+    string line;
+    getline(cin, line);           // read a full line
+    stringstream ss(line);        // turn it into a stream
+
+    vector<int> arr;
+    int x;
+    while (ss >> x) {             // extract ints one by one
+        arr.push_back(x);
+    }
+
+    // print to verify
+    for (int num : arr) cout << num << " ";
+    cout << endl;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+string line;
+getline(cin, line); 
+stringstream ss(line);
+
+vector<string> words;
+string w;
+while (ss >> w) {
+    words.push_back(w);
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Prime factors ==>  n = a* b
+why we can go till rootn to get all the factors of a number
+
+ n = rootn * root n , if a == b ,  other wise 1 will be > and one will be < , but if both becomes > rootn , then rootn*rootn > n , not possible so thats why we can find all factors of n, just by going rootn, 1 more thing , going till root n and then find n%i == 0, then (i,n/i) are factors , but keep a check , if i!=n/i, for same factor
+
+
+Trivial Division Method to find Prime factors only
+ d = 2; d*d<=n; d++;
+ while(n%d == 0)
+ fact.push_back(d)
+ n/ =d;
+ if(n>1)fact.push_back(n);
+very Intutive and Easy
+
+
+Seive Of erathosthenes 
+think it as it will give an array of bool , were each index will represent the it is prime or not , just by 0 or 1, like if -- 1 prime else non prime,
+So by the time we reach primes up to √n, every composite number has already been marked by its smallest prime factor. Eg -- 77 -- 7*11 , root7 <= 77
+
+
+Smallest Prime factor of  i till n
+const int N = 1e7;
+int spf[N];
+
+void solve(){
+    for(int i = 0; i < N; i++){
+        spf[i] = i;
+    }
+
+    for(int i = 2; i * i <= N; i++){
+        if(spf[i] == i){
+            for(int j = i * i; j < N; j += i){
+                if(spf[j] == j){
+                    spf[j] = i;
+                }
+            }
+        }
+    }
+}
+T.C -- N loglogn
+
+
+Highest prime factor of i till n
+const int N = 1e7;
+int hpf[N];
+
+void solve(){
+    for(int i = 0; i < N; i++){
+        hpf[i] = i;
+    }
+
+    for(int i = 2; i< N; i++){
+        if(hpf[i] == i){
+            for(int j = 2 * i; j < N; j += i){
+                hpf[j] = i;
+            }
+        }
+    }
+}
+
+
+Seieve to calculate prime factors -- trivial mehtod -- sqrtn, but using seiveve -- nloglogn
+Prime factors -- n/spf[n] till we get n = 1
+// T.C = O(n log n)
+// prime factors of n
+vector<int> prime_factors;
+while(n > 1){
+    prime_factors.push_back(spf[n]);
+    n /= spf[n];
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+Every Number hass some prime factors other than 1 , and what factor means is lets say if a number has some factor x , then number%x == 0 always . 
+
+In Cpp a*a can't store more than 10^18 , always check constraints they will hint , and also if i want to check a number is prime and if num is greater than 1e7 cant not do this .
+Always use Trial divion method to check prime if constraints allow 
+
+gcd can be same or dec om adding more numbers
+
+Pigeon hole -- n items , m conainers, n>m, then there is always 1 cont have > 1 item.
+
+string(count, ch) -- inbuilt thing in c++, to construct string on the basis of char count 
+
+No. of subsequence -- aaaa , 2^4-1 for this as all are in groups , aeiou , 2^1-1 for all , total 5 here. so min subseq chars must be in adjancent to each other.
+
+Next permutation is used only on string or array
+
+We can caluclate all prime factors of a number n simply by using spf array , as same as in maths.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Time Complexity Recursion -- Make recursive tree and find time taken on each node ignore recursive call and in the end take sum of time taken on each node.
+Space complexity -- Make rec tree and space taken on each node , max height of tree kii node ke space ko add krdo .
+
+
+The correct formula for selecting 2 items from A items is:
+A choose 2 = A * (A - 1) / 2
+AC3 = A × (A - 1) × (A - 2) ÷ 6
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Binary Search -- Binary Search is a optimse searching algorithm, logn TC, Binary searh find the element no will ask this to you its more than this.
+
+When Binary search can be applied -- When we have 4 types of functions , stritly inc, inc, strictly dec , dec , i.e we can reject a portion where answer will not be possible , thats the intution for binary search , that either ans will be in right or left of mid.
+
+Very Important concept is predicate function , predicate function tells us either true or false for a given value .
+
+Monotonic predicate function -- Base of Binary search , they are like TTTTTFFFFF , FFFFFFTTTTTT, for given  possible values if its turn its parity then it will be remain in that parity for all values after that , this is the main logic why we can use binary search on monotonic predicate functions, that is we can if we get T for any value then might be true before or after it, or same for false, this way we can reduce the searched space on each iteration.
+
+
+Now Binary Search on answer came into picture, this is the real use case of binary search , by looking at problem u cant think its of binary search , but there will be a pattern something like you have a search space for answer that answer will be from this search space dont know that exact place , maximum time we can decide a starting point and ending point that ans cant go beyon this, but you can think directly by ques u have to think for it, that how this can be converted to BS , how can searched space can be defined and How monotonic predicate function works here .  Example -- N^2>100 , find the maxpossible value of n, clearly we can think that many number n follow this , and many dont , and its a monotonic function , u have search space now u just need the to maximise the ans, for that store and search works best , technique in BS that this might be the ans , and search for better ans.
+
+**** Maximum time u need to find max or min ans from search space given anlways thinks BS.
+
+Very famous question -- 1,2,3,4,4,4,4,5,5,5 tell how many times 4 occurs, this is quite easy using BS , just find the first index where 4 occurs and last index where 4 occurs , j-i is ans, but data must be sorted.  
+
+lowerbound-- gives the same thing , first index >= given value.
+upperbound -- gives the last index of ele > given index.
+
+Best intutive question for BS on ans -- Fairworkload 
+
+****** TC for Bs on ans -- log(searchspace)*time taken to test 1 possible ans. 
+
+In sqrt ques -- dont use mid*mid<=x , if mid=10^17 , then not work , use (mid<=x/mid).
+
+Very inituive ques - packaging rectangles -- very  inituive that BS can work. Min side of sq that can contain all the rect of w*h in it, predicted function -- yes after a value of n all sq can fit the all rec , then search space yes 1 to 10^18, 1e9*n , always think how u can write a predicate function for the given condition her maths is used , that a = x/w -- no of rec can come in 1 row, b = x/h . rec in 1 col, x is possible min ans , mid here, now just check a*b >=n , then return true, else false and on the bais of that min the ans , 
+
+but here dont use a*b >=n, overflow if a mid = 1e18 and w = h = 1, use a>=ceil(n/b) very important why ceil, cos we can first greater val of that gives true.
+
+if a<n/b -- no ceil needed.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Bs on decimals 
+
+On Cf we will be asked , print ans with a relative error of upto 1e-6, it means till 6 decimal places it should match , also a differnce of 1e-6 can work, 1.000001, 1.000002, 1.000003 all are correct .
+
+TC -- log(int search space * 1/precision value)
+
+Dont deal on exact edge lets say u r aksed till 1e-6 places then try to use 1e-7 or 1e-8 , it will handle precision issues in decimal values in C++.
+
+In sqrt decimal ques, right = mid - precision , see code ones , and also try to use for loop , by cal iterations needed to get the ans , log1e3 - 10 iterations, 1e24 - 80 iterations.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Cncept -- For each independent choices if asked number of ways , then ans *= number of ways cos each index in independent fromt other.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Convert array to 0/1 based on the condition.
+
+Identify segments of consecutive 1’s.
+
+Find valid starting positions in each segment: cnt - k + 1.
+
+For each start, count subarrays that can be formed.
+
+Use formula (d*(d+1))/2 to sum all subarrays in the segment.
+
+Add counts from all segments for the final answer.
+
+The +1 ensures inclusive counting of the last valid start.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Back tracking -- Simply means pruning the unrelevant calls this helps in minimise the rec calls , TC remain same on paper.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Recursion Min/Max pattern in which you will be asked to either maximise or minimise , then in base case return what u have bee asked. Like -- 0/1 knapsack with pure recursion.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Let [l1, r1] = current valid range for v (intersection of previous piles).
+Segment problems approach
+𝑙=max⁡(𝑙1,𝑙2),𝑟=min(𝑟1,𝑟2)l=max(l1,l2),r=min(r1,r2)
+Why?
+l = max(l1,l2) → left end of intersection (must be >= both left ends)
+r = min(r1,r2) → right end of intersection (must be <= both right ends)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Lets talk about something intresting in bit manipluation conept -- always remember -- 2^Y > 2^y-1 + 2^y-2 + ... + 2^0. , in C++ -- we can find highest power of that firtst inside n is , 
+msb = log2(n) it gives the postion like for n = 8 -- it gives -- 3 , for 7 -- 2 , 0 based indexing.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+N == p^x*q^y.... here N is any integer express in the form of its prime factors , when we want to know the number of divisors it is == x+1*y+1... 
+
+Time complexity to find next prime number n to n+1 th prime , it can be dome in logeN.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// to remove every factor of 2 from a , a = a/2; while a%2==0.
+
+// a = 2^x , if we want x then x = log2(a)
+
+
+Why primes matter for gcd
+
+The gcd of two numbers comes directly from their prime factorization:
+
+if a=22×31×50×70,b=21×31×51×70 then ,
+gcd(a,b)=2min(2,1)×3min(1,1)×5min(0,1)×7min(0,0)=21×31=6
+
+So :
+The gcd depends only on the common primes and their powers.
+
+If two numbers share no common primes, their gcd = 1.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+In C++, log(n)/log(3) gives a double value.
+
+When assigned to an integer type (like long long), it gets truncated — i.e., the decimal part is cut off (not rounded).
+
+Example: 2.9999999 → 2
+
+Due to floating-point precision errors, even exact powers of 3 (like 27 = 3³) can give slightly less than the true value.
+
+So c = log(n)/log(3) may become 1 less than expected.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Binary search on answer --- Assume that an answer is X , then ans>=X or ans<X possible --> checker function possible --> F(X) --> Plot this checker function --> TTFF or FFTT then use Binary search on answer becacuse we have possible ans X and a search space and can move either left or right on the basis of condition in search space.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Interactive problem -- Look at template in vs code
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Sliding Window  
+
+Queue / Deque Optimizations
+
+The elements which are added first in the window will be removed first, so sometimes we can optimize our codes by using queue / deque instead of sets.
+
+Example → if we have to find the first negative element for all subarrays, we can store the indices of negative elements in a queue and the index of first negative element of window will be present at the front of queue for all subarrays.
+(generally we don’t require to optimize this much, but in interviews it will leave a very good impression)
+
+
+
+/// Concept 
+Maximum subsrray sum -- Kadanes algorithm very intutive ,  Another derived approach -- usingn prefix sum -- ( currentprefixsum - min(pre[l-1) , 1<=l<=r ) , proved basic maths . 
+
+Maximum subarray sum having length atleast mn , mn -- length of subarray 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Rotation	     Mapping (i, j) → new index
+
+90° Clockwise	        (j, N−1−i)
+90° Anti-Clockwise	(N−1−j, i)
+180°	              (N−1−i, N−1−j)
+360°	                (i, j) (same)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// two pointers
+
+Two Pointers
+
+Widely used in Competitive Programming
+
+Optimization Technique
+
+Most Two Pointer problems can be solved using Binary Search
+
+Useful for a lot of array based problems
+
+Super useful for interviews too
+
+(Handwritten at bottom)
+
+Optimization over a lot of BS ideas
+O(n log n) → O(n)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Two Pointers (Fixing i vs Fixing j)
+Fix starting point (fixing i)
+
+i to j is the set
+
+When you move i forward,
+you try to move j as much as possible towards right
+until the segment is good.
+
+Fix ending point (fixing j)
+
+i to j is good
+i-1 to j is bad
+
+When you move j forward,
+you try to keep i pointer as much left as possible,
+but you increase i until the segment is bad.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+New Prefixsum optimisation
+
+if we are using prefix sum on ranges l to r , but if we need all possible ranges of l to r , for each r , then it will take o(n^2) - to optimise it we use separable equation derived from 
+
+l to r according to question then just maintain maxormin val what u need for each l to r , r is fixed . 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+lower_bound(all(a), x)	------    returns iterator
+lower_bound(all(a), x) - a.begin()    -----   returns index
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+In kadanes algorithm -- very intutive for every element we have 2 choices that we can include or not , and thats pretty obvious extend karna hi nhi subrray agar last subarray ka sum already -ve ho chuka hoga to nahi krna extend , new subrray wahi se start karo , and har bar ans ko update krte raho har element par jakar.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Number and Sum of Divisors from Prime Factorization
+
+if 
+N=p1e1​​p2e2​​…pkek​​
+
+Number of Divisors:
+d(n)=(e1​+1)(e2​+1)⋯(ek​+1)
+
+Sum of Divisors:
+σ(n)=p1​−1p1e1​+1​−1​⋅p2​−1p2e2​+1​−1​⋯pk​−1pkek​+1​−1​
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Important GCD Results
+Properties
+
+GCD(a, b) = GCD(b, a)
+
+GCD(a, 0) = a
+
+GCD(a, b, c) = GCD(GCD(a, b), c) = GCD(a, GCD(b, c)) = GCD(b, GCD(a, c))
+
+GCD(a, b) ≥ GCD(a, b, c) ≥ GCD(a, b, c, d)
+
+GCD contains the minimum powers of primes
+
+LCM contains the maximum powers of primes
+
+GCD(a, b) × LCM(a, b) = a × b
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Euler’s Totient Function -- template
+
+Euler’s Theorem 
+
+Fermat’s Theorem
+
+Mod Inverse under Euler’s & Fermat’s Theorem
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Modular Arithmatic 
+
+ADD -- ((a%m) + (b%m) %m)
+MUL -- ((a%m)*(b%m)%m)
+SUB -- (((a%m) + (b%m)+m) %m)
+DIV -- (((a%m) * (b^-1)%m)%m) , b^-1 --- Multiplicative inverse of b
+
+
+Why we use 1e9 + 7 -- Because sometimes its not possible to store answer in any data type , (like factorial of number).
+why only 1e9+7 -- very close to integer maximum value , and multiplicative inverse only possible from 1 to  , if M -- Prime.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+3 Cases for a pow b mod m , (a^b)%M
+M -- 1e9+7
+
+Case 1 -- What if a becomes too big -- Use this form (a^b)%M = ((a%M)^b)%M , in this way ans will not cause over flow and can be store in a int variable only.
+
+const int M = 1e9 + 7;
+
+int binomod(int a, int b) {
+    long long res = 1;
+    long long base = a % M;
+
+    while (b > 0) {
+        if (b & 1) {
+            res = (res * base) % M;
+        }
+        base = (base * base) % M;
+        b >>= 1;
+    }
+
+    return (int)res;
+}
+
+
+// Case 2 -- what if m becomes too big more than 1e18 -- in CP folder 
+// Case 3 -- what if b becomes too big more than 1e18 -- in CP folder 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Combinatorics 
+
+
+Combination -- choosing elements 
+
+Important Binomial Results
+
+1. C(n, k) = C(n, n − k)
+
+2. C(n, k) = C(n − 1, k − 1) + C(n − 1, k)
+
+3. Σ (from k = 0 to n) C(n, k) = 2^n
+
+
+
+
+2 use cases of nCr 
+
+-- if you have to calculate the nCr ,  many times with o(n) , precompute and o(1)  calculation of each query.
+
+-- if you have to calculate the nCr , just once in O(r) 
+
+
+Use this nCr = n*n-1*n-2........n-r+1 / 1*2*3.......r times  , use loop for denominator and (r!)^-1 is result from previous learning.
+
+
+
+
+
+Important Binomial results 
+
+1) Given n students pick up r students from them such that k special students are always selected.
+
+## -- n-kCr-k -- logical
+
+
+2) Given n students pick up r students from them such that k students of them are never chosen 
+
+## -- n-kCr
+
+
+3) value of nCr is greatest , when r = n/2
+
+
+
+/////////////////////////////
+Arrangement , permutation , arranging distinct elements 
+
+1) arrangement of n distinct ele -- n!
+
+2) arranging similar elements -- (a1+a2+a3+....an)! / a1! * a2! * a3! .... an!
+
+First, assume all letters are different
+Then divide by factorials of repeated elements because they create duplicate arrangements
+
+
+with repetetion allowed 
+
+n^n  -- arrange n
+
+n^r -- arrange r from n 
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Independent choices -- IF i have x choices at one position then , simply chocies at 1 pos * 2nd pos * ..... , (2^k) , k == number of positions . 
+Identify where we have choices and where we dont have choices. then accordingly form the formula.
+
+Result -- 2^0 + 2^1 + 2^2 + ............ 2^k = 2^(k+1) - 1 
+In combinatorics questions always check u r dont counting the elements more than once.
+
+
+Count anagrams -- Fac(n) , Inv_fac(n) perfect use of template  during contest.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Greedy Algorithms 
+
+a stratedy that assumes that the answer can be found using some possiblities and only tries out those limited possiblites
+It innvolves cooming up with a claim , greedy and then proving it.
+
+How to prove 
+formula or intutive
+try many cases and failing to disprove.
+
+
+stress testing -- program to create test cases and check soution.
+
+always try to imagine things in terms of maths and equation to prove or make some observation , like array is sorted === a[i]<=a[i+1] .
+
+assume your solution X is best and No solution Y is better than X exists.
+
+Note -- If we want minimum elements to be use to form X using elements of array and {x1, x2, x3 , ....xn} , if xi+1%xi == 0 , then always start from higher xi , but not if xi+1%xi != 0 .
+
+Note -- If Something like that is asked -- A+B == N  and A*B is max ? then find A and B , then always try to think in terms of values in contest.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CPP points
+
+Make input output for efficient 
+ios::sync_with_stdio(0);
+cin.tie(0); 
+Fast I/O using ios::sync_with_stdio(false)   , breaks sync between printf of c and cout c++
+cin.tie(NULL) for break cin and cout sync
+2*10^9 -> int range 
+9*10^18 -> long long range
+
+
+Operation on string ques count check krste hi operation ke baad kya changes ayenge aur kya conditons same rahegi like this 
+prefix sum for any index by creating a prefixsum array can used to solve if u r working on index and sum
+
+fixed and setprecision for doubles
+
+if you are given an array a and an array b and you are asked to convert the array b to array after performing any operation on array b then always think in reverse direction also can u convert the array a to b in same reverse operations
+
+
+Modulo Operation - Basic role is to control overflow on big values in a range
+
+
+if in ques it is written give output ans modulo m  always do arithmetic operation according to formulae 
+
+ 	
+
+CP:-
+
+1- If You want to calculate sum till  ith or in a range suppose l to r always think about prfix sum and suffix sum and total sum - prefix/suffix sum.
+2- technique when u aksed expect ith gcd or lcm u can calculate before ith gcd that is upto   i-1 and after i that is i+1 and merge them.
+
+3-if u r asked anything in fix sized window then u have to just think about the sliding window very useful.
+
+Input taken in vector of pair ----> cin >> v[i].first >> v[i].second; alternate way ----> cin >> a >> b; 
+                                                                                         v.push_back({a, b});
+
+4- if a number is there and u need to find largest divisor other than num --> it will be --> num/prime[x], prime[x] => lowest prime factor of num
+
+5-> To check subarray is sorted or not firstly create a array such that its previous is greater add 1 to else add 0 
+
+
+The key insight is understanding that repeatedly subtracting K from N , until N  becomes smaller than K , is functionally equivalent to finding the remainder of N when divided by 
+K,  which is what the modulo operation (N % K) does.
+
+
+
+The expression return (num & (num + 1)) == 0 is a clever way to check if all the bits in a number are set (i.e., the number is of the form 
+
+__builtin_popcount -> to count set bits in number
+
+*max_element(arr.begin, arr.end) -> it gives max value from array
+
+parity check in cancel type of question -> obeservation 
+
+minimum or maximum between two arrays any operation -> sort (greedy algo)
+
+first += string(freq[ch]/2, ch); => This creates and add a string basis of the freq/2 ,Its a syntax 
+
+maximum and minimum  imp , sort , pair if corresponding elements is mentioned , else min difference or max difference
+
+There is inbuilt function in c++ next_permutation on vector 
+
+Freq array -> with index 0 - 25 -> s[i] - 'a' -> it gives correct index , and s[i] + 'a' -> it gives character
+
+s[i] - '0' -> it convert character to number   Example: '3' - '0' → 3
+
+number + 'a' -> it converts number to character  Example: 2 + 'a' → 'c' (since 'a' is ASCII 97, 97 + 2 = 99, which is 'c').
+
+
+
+
+Circular array - In circular array problem if I want to find distance of element from any index create a array with copy of array and middle one treat as main and two two array will be there one of left and one on right 
+
+
+prop[i].resize(unique(prop[i].begin(), prop[i].end()) - prop[i].begin());  ---> STL function to remove duplicates
+
+
+In a question where two variables are used in form of equation and u want to know max limit of iteration , can put x =0 then y= 0 and max and min possible values 
+
+
+
+Syntax:
+cpp
+Copy
+Edit
+void func(int arr[], int size); // or int* arr
+Key Points:
+Arrays decay to pointers when passed to functions, so you lose the size information.
+
+You must pass the size separately.
+																																																																				\	
+Internally, you're just working with a pointer to the first element of the array.
+
+
+Example:
+cpp
+Copy
+Edit
+void printArray(int arr[], int size) {
+    for(int i = 0; i < size; i++)
+        cout << arr[i] << " ";
+}
+
+
+Syntax:
+cpp
+Copy
+Edit
+void func(vector<int> v);
+Key Points:
+Vectors are passed as complete objects, and they retain size and member functions.
+
+You don’t need to pass the size separately.
+
+Copying a vector (if passed by value) may be expensive, so use pass-by-reference if you want efficiency:
+
+cpp
+Copy
+Edit
+void func(vector<int>& v);  // allows modification
+void func(const vector<int>& v);  // read-only
+Example:
+cpp
+Copy
+Edit
+void printVector(const vector<int>& v) {
+    for(int x : v)
+        cout << x << " ";
+}
+
+
+
+
+This is when we want to use set in a User Defined datatype class
+class Person 
+public:
+    int age;
+    string name;
+
+    bool operator < (const Person &other) const {
+        return age < other.age;
+    }
+};
+
+
+// set, multiset , unordered_set , unordered_multiset
+// set: Unique element , sorted
+// multiset: sorted
+// unordered_set: Unique
+// unordered_multiset: allows duplicates, not sorted
+
+
+If there are 2 numbers a,b and one number n , we want those numbers which are divisible by both a and b till n=> n/lcm(a,b)
+
+
+--> In the range 1 To N --> if we want a count of all numbers that are divisible by X , can be counted as --> N/X  
+
+Jab hume ek range mein ese integer count krne hai jo a aur b ke bich mein ho , aur c aur d dono se divide hote ho to hum vo numbers count kr skte hi jo c se hote hi => b/c - a-1/b krkr aur jo d se hote hi vo => b/d , a-1/d krkr , and jo dono se hote hi is dono ko add krdo par ismein kuch ese bhi hoge jo dono se hote hoge => unko minus krdo sum mein se => unko nikal skte hi => lcm(c,d) krkr
+
+
+
+If a Numner P is given => then all divisors of P-1 will give the same remainder when divided by P 
+
+a%b => range from 0 to b-1 .
+
+When frequency of characters is given and you have to construct Max length palindrome subsequence ,   f/2 + odd freq + f/2;
+
+
+Observation => If u can perform an operation on index+1 , then its always better to start from back side .
+
+
+
+// Time Compexity Imp points
+10^8 ==> 1 second of time 
+ 
+N! = N= 10                   ===> all permutations of an array
+N^3 = N= 400                 ===> matrix multply 
+N^2 = N= 5000                ===> bubble , inertion sort 
+NrootN = N= 10^5             ===> usually factoring 
+NlogN = N= 10^6              ===> Merge sort , Binary search n times
+N = N= 10^7                  ===> Linear search, reverse , string compare 
+rootN = N= 10^12             ===> factors of a number
+log n / o(1) = N= 10^18      ===> binary search / formula related 
+
+
+Imp point ==> Ex => Time Limit per test => 2 seconds => 2*10^8 operations are allowed on Test File , and 1<=t<=10^4 => number of test cases ,  so operation allowed per test case => 2*10^8/10^4 => 2*10^4 , but it is given that The sum of n overall test cases wont exceed 2*10^5 , so we will compare the sol with Test file not per test cases . it means => nlogn will also work here .
+
+
+lowerbound in STL return the index of the element equal or greater than passd value , lower_bound(starting index, end index , value), same with upper bound just opposite index
+
+
+multiset mein insertion deletion aur search o(logn) complexity
+
+
+(h + d - 1) / d;  ==> ceil value with integer format 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+/////////////////////////////////
+Some Important Templates
+//////////////////////////////// 
+ 
+ Template for custom comparator 
+
+struct Comparator {
+    bool operator()(const pair<int,int>& a, const pair<int,int>& b){
+        if (a.first == b.first) 
+            return a.second < b.second; // tie-breaker
+        return a.first < b.first; // main criteria
+    }
+};
+
+// change the return sign for priority queue lets say for min heap 
+
+return a.first>b.second
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+lambda function 
+
+int main() {
+    cout << [](int x, int y) {return x+y;} (4, 7);
+}
+
+int main() {
+    auto sum = [](int x, int y){return x+y;};
+    cout << sum(2,3);
+}
+
+int main() {
+    vector<int> v = {2, -4, -5};
+    cout << all_of(v.begin(), v.end(), [](int x){return x > 0;}) << endl;
+    cout << any_of(v.begin(), v.end(), [](int x){return x > 0;}) << endl;
+    cout << none_of(v.begin(), v.end(), [](int x){return x > 0;}) << endl;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+lower bound , upper bound used on sorted data
+
+lower bound -- gives u the value if present else just greater value than the number
+
+upper bound -- gives u the value just greater than the number
+
+they return location 
+
+lower_bound(starting address, ending address, x), works in log n 
+
+
+in sets and map case use them int this way ===== s.lower_bound(x) 
+
+in case of map it works on key not on value mp.lower_bound(key)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int age;
+    string name;
+
+    cout << "Enter age: ";
+    cin >> age;
+
+    cin.ignore();   // discard the leftover '\n' in the buffer
+
+    cout << "Enter full name: ";
+    getline(cin, name);
+
+    cout << "Age: " << age << ", Name: " << name << endl;
+    return 0;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
