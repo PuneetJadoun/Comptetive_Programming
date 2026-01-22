@@ -1,0 +1,44 @@
+// Recursive version of binary exponentiation
+// Time complexity: O(log(b))
+
+// Intution is easy we are just using divide and conquer method to calculate the power of a number in log(n) time.
+// Like 2^16 = 2^8 * 2^8 = 2^4 * 2^4 * 2^4 * 2^4 = 2^2 * 2^2 * 2^2 * 2^2 * 2^2 * 2^2 * 2^2 * 2^2 = 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1 * 2^1
+// So we can see that we are dividing the problem into two parts and solving them recursively.
+
+
+long long binpow(long long a, long long b) {
+    if (b == 0)
+        return 1;
+    long long res = binpow(a, b / 2);
+    // we are using res to store the result of recursive call other wise we need to make extra calls for the same thing below , it makes space call stack less effective
+            
+    if (b % 2)
+        return res * res * a;
+    else
+        return res * res;
+}
+
+// Iterative version of binary exponentiation
+// Time complexity: O(log(b))
+
+// This method is not that intutive but it is more efficient than the recursive version because it does not use the call stack.
+// For example we want 3^13 , a = 3 , b = 13
+
+// 1101	13 (odd)	3	ans = 1×3 = 3
+// 110	6	a = 3² = 9	3
+// 11	3 (odd)	a = 9² = 81	ans = 3×81 = 243
+// 1	1 (odd)	a = 81² = 6561	ans = 243×6561 = 1594323
+// 0	stop	—	—
+
+
+long long binpow(long long a, long long b) {
+    long long res = 1;
+    while (b > 0) {
+        if (b & 1)
+            res = res * a;
+        a = a * a;
+        b >>= 1;
+    }
+    return res;
+}
+
