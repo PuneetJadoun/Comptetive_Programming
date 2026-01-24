@@ -1351,6 +1351,16 @@ Note -- If we want minimum elements to be use to form X using elements of array 
 Note -- If Something like that is asked -- A+B == N  and A*B is max ? then find A and B , then always try to think in terms of values in contest.
 
 
+
+
+///////////////////
+activity selection problem -- simple approach think which activity should be done first and handle overlap.
+knapsack problem -- just find out per unit profit and then cal till u r less than W.
+Job sequencing Problem -- Approach simple sort the profit of jobs then what u need to do , simple put all timeline in a set and found upperbound of each deadline[i]-1, now put this job and take profit. TC - nlogtimeline
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
