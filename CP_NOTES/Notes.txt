@@ -1079,6 +1079,15 @@ Binary search on answer --- Assume that an answer is X , then ans>=X or ans<X po
 
 Interactive problem -- Look at template in vs code
 
+normally flow -- user submit code -- codeforces  cf check code on some input and and gives output output will be verified .
+
+Interactive -- code -- cf give input code give output again cf give input on the basis of output for prev output , till both programs end.
+
+We should use endl , it flush the buffer 
+
+In most questions queries will be given , so we need to figure out which algorithm can work better .
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Sliding Window  
 
